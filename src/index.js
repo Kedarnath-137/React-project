@@ -2,15 +2,38 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { DataLayer } from './DataLayer';
+import reducer, { initialState } from './reducer';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    
+    <DataLayer initialState={initialState} reducer={reducer}>
     <App />
+    </DataLayer>
   </React.StrictMode>
 );
+
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+// import App from './App';
+// import * as ServiceWorker from "./serviceWorker.js";
+// import reducer, { initialState } from './reducer';
+// import { DataLayer } from './DataLayer.js';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <DataLayer initialState={initialState} reducer={reducer}>
+//       <App />
+//     </DataLayer>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
+
+// ServiceWorker.unregister();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
